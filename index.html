@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Coach</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <img src="/static/logo1.jpg" class="logo">
+
+    <!-- Home page for selecting exercise -->
+    <div class="container active" id="homePage">
+        <h1>Welcome to Smart Coach!</h1>
+        <h2>Choose the exercise</h2>
+        <input type="text" id="searchBox" placeholder="Search..." onkeyup="filterExercises()">
+        <button class="exercise-btn" onclick="showVideo('squat1.mp4', 'Squat')">Squat</button>
+        <button class="exercise-btn" onclick="showVideo('pushup1.mp4', 'Pushup')">Push-ups</button>
+        <button class="exercise-btn" onclick="showVideo('side_plank.mp4', 'Side Plank')">Side Plank</button>
+        <button class="exercise-btn" onclick="showVideo('arm.mp4', 'Arm Workout')">Arm Workout</button>
+    </div>
+
+    <!-- Video page before starting exercise -->
+    <div class="video-screen" id="videoPage">
+        <h2 id="exerciseTitle">Exercise</h2>
+        <h3>Exercise Tutorial 🎥</h3>
+        <div class="video-container">
+            <video id="exerciseVideo" controls>
+                <source src="" type="video/mp4">
+            </video>
+        </div>
+        <button class="start-btn" onclick="showCameraAccess()">Start Exercise</button>
+    </div>
+
+    <!-- Camera access page -->
+    <div class="camera-access" id="cameraPage">
+        <h3>Allow camera access!</h3>
+        <button class="allow-btn" onclick="startExercise()">Allow</button>
+        <button class="deny-btn" onclick="goHome()">Not Allowed</button>
+    </div>
+
+    <!-- AI tracking page -->
+    <div class="ai-tracking" id="aiPage">
+        <h2>Tracking Exercise</h2>
+        <img id="aiFeed" src="" alt="AI Tracking Feed">
+        <button class="stop-btn" onclick="goHome()">Stop Exercise</button>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
